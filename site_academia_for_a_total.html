@@ -1,0 +1,1306 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Academia Força Total | Supere Seus Limites</title>
+    <!-- Google Fonts: Montserrat e Oswald -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800;900&family=Oswald:wght@500;600;700&display=swap" rel="stylesheet">
+    <!-- FontAwesome Icons CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        darkbg: '#0a0a0c',
+                        cardbg: '#14161d',
+                        cardborder: '#222634',
+                        brand: {
+                            DEFAULT: '#ff3b00',
+                            hover: '#e03400',
+                            glow: 'rgba(255,59,0,0.35)',
+                            light: '#ff6a38'
+                        },
+                        accentGold: '#f59e0b'
+                    },
+                    fontFamily: {
+                        sans: ['Montserrat', 'sans-serif'],
+                        display: ['Oswald', 'sans-serif']
+                    },
+                    boxShadow: {
+                        'glow': '0 0 25px rgba(255, 59, 0, 0.4)',
+                        'glow-lg': '0 0 40px rgba(255, 59, 0, 0.6)',
+                        'gold-glow': '0 0 25px rgba(245, 158, 11, 0.4)'
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        /* CSS Customizado adicional */
+        body {
+            background-color: #0a0a0c;
+            color: #f3f4f6;
+            font-family: 'Montserrat', sans-serif;
+            overflow-x: hidden;
+        }
+        .glass-panel {
+            background: rgba(20, 22, 29, 0.75);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+        }
+        .glass-card {
+            background: rgba(20, 22, 29, 0.85);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.07);
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .glass-card:hover {
+            border-color: rgba(255, 59, 0, 0.5);
+            transform: translateY(-6px);
+            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.6), 0 0 20px rgba(255, 59, 0, 0.25);
+        }
+        .gradient-text {
+            background: linear-gradient(135deg, #ffffff 0%, #ff3b00 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .gold-gradient-text {
+            background: linear-gradient(135deg, #fbbf24 0%, #f59e0b 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #0a0a0c;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #ff3b00;
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #e03400;
+        }
+    </style>
+</head>
+<body class="antialiased selection:bg-brand selection:text-white">
+
+    <!-- HEADER FIXO -->
+    <header class="fixed top-0 left-0 w-full z-50 transition-all duration-300 glass-panel border-b border-white/10" id="main-header">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+            
+            <!-- LOGO -->
+            <a href="#" class="flex items-center gap-3 group">
+                <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-brand to-red-700 flex items-center justify-center text-white text-2xl shadow-glow group-hover:scale-105 transition-transform duration-300">
+                    <i class="fa-solid fa-dumbbell"></i>
+                </div>
+                <div class="flex flex-col">
+                    <span class="font-display text-2xl font-bold tracking-wider text-white leading-none group-hover:text-brand transition-colors">
+                        FORÇA <span class="text-brand">TOTAL</span>
+                    </span>
+                    <span class="text-[10px] tracking-[0.25em] text-gray-400 uppercase font-semibold">Academia & Health</span>
+                </div>
+            </a>
+
+            <!-- NAVEGAÇÃO DESKTOP -->
+            <nav class="hidden lg:flex items-center gap-8 font-semibold text-sm tracking-wide">
+                <a href="#inicio" class="text-white hover:text-brand transition-colors">Início</a>
+                <a href="#modalidades" class="text-gray-300 hover:text-brand transition-colors">Modalidades</a>
+                <a href="#planos" class="text-gray-300 hover:text-brand transition-colors">Planos</a>
+                <a href="#horarios" class="text-gray-300 hover:text-brand transition-colors">Horários</a>
+                <a href="#depoimentos" class="text-gray-300 hover:text-brand transition-colors">Depoimentos</a>
+                <a href="#faq" class="text-gray-300 hover:text-brand transition-colors">FAQ</a>
+            </nav>
+
+            <!-- BOTÃO AULA GRÁTIS DESKTOP -->
+            <div class="hidden lg:block">
+                <a href="#agendar" class="inline-flex items-center justify-center px-6 py-3 rounded-xl bg-brand hover:bg-brand-hover text-white font-bold text-sm tracking-wide uppercase transition-all duration-300 shadow-glow hover:shadow-glow-lg transform hover:-translate-y-0.5">
+                    <i class="fa-solid fa-fire mr-2"></i> Aula Grátis
+                </a>
+            </div>
+
+            <!-- BOTÃO MENU MOBILE -->
+            <button id="mobile-menu-btn" aria-label="Abrir menu" class="lg:hidden text-2xl text-white focus:outline-none p-2 hover:text-brand transition-colors">
+                <i class="fa-solid fa-bars" id="menu-icon"></i>
+            </button>
+        </div>
+
+        <!-- MENU MOBILE DROPDOWN -->
+        <div id="mobile-menu" class="hidden lg:hidden glass-panel border-t border-white/10 px-6 py-6 space-y-4">
+            <a href="#inicio" class="mobile-link block text-lg font-medium text-white hover:text-brand py-2">Início</a>
+            <a href="#modalidades" class="mobile-link block text-lg font-medium text-gray-300 hover:text-brand py-2">Modalidades</a>
+            <a href="#planos" class="mobile-link block text-lg font-medium text-gray-300 hover:text-brand py-2">Planos</a>
+            <a href="#horarios" class="mobile-link block text-lg font-medium text-gray-300 hover:text-brand py-2">Horários</a>
+            <a href="#depoimentos" class="mobile-link block text-lg font-medium text-gray-300 hover:text-brand py-2">Depoimentos</a>
+            <a href="#faq" class="mobile-link block text-lg font-medium text-gray-300 hover:text-brand py-2">FAQ</a>
+            <a href="#agendar" class="mobile-link block w-full text-center py-3 bg-brand text-white font-bold rounded-xl shadow-glow uppercase">
+                <i class="fa-solid fa-fire mr-2"></i> Agendar Aula Grátis
+            </a>
+        </div>
+    </header>
+
+    <!-- HERO SECTION -->
+    <section id="inicio" class="relative min-h-screen flex items-center justify-center pt-28 pb-16 overflow-hidden">
+        <!-- Background Imagem + Overlay Escuro -->
+        <div class="absolute inset-0 z-0">
+            <img src="https://tse3.mm.bing.net/th/id/OIP.7zv91st6lNkpHqtXPPsW8QHaC9?r=0&rs=1&pid=ImgDetMain&o=7&rm=3" 
+                 alt="Treino na Academia Força Total" 
+                 class="w-full h-full object-cover object-center opacity-30 scale-105 filter brightness-90">
+            <div class="absolute inset-0 bg-gradient-to-t from-darkbg via-darkbg/70 to-darkbg/90"></div>
+            <div class="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-brand/15 via-transparent to-transparent"></div>
+        </div>
+
+        <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full text-center lg:text-left pt-8">
+            <div class="grid lg:grid-cols-12 gap-12 items-center">
+                
+                <div class="lg:col-span-8 space-y-8">
+                    <!-- BADGE MOTIVACIONAL -->
+                    <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full glass-panel border border-brand/40 text-brand text-xs sm:text-sm font-bold uppercase tracking-wider shadow-glow">
+                        <span class="w-2.5 h-2.5 rounded-full bg-brand animate-ping"></span>
+                        <i class="fa-solid fa-bolt"></i> A Maior Estrutura Fitness da Região
+                    </div>
+
+                    <!-- TÍTULO PRINCIPAL MOTIVACIONAL -->
+                    <h1 class="font-display text-4xl sm:text-6xl lg:text-7xl font-extrabold uppercase leading-tight tracking-tight text-white">
+                        SUPERE SEUS <span class="gradient-text">LIMITES.</span><br>
+                        TRANSFORME SUA <span class="text-brand inline-block relative">
+                            FORÇA.
+                            <svg class="absolute -bottom-2 left-0 w-full h-3 text-brand/60" viewBox="0 0 100 12" fill="none" preserveAspectRatio="none"><path d="M0 10 Q 50 0 100 10" stroke="currentColor" stroke-width="4"/></svg>
+                        </span>
+                    </h1>
+
+                    <!-- SUBTÍTULO MOTIVACIONAL -->
+                    <p class="text-gray-300 text-lg sm:text-xl max-w-2xl font-light leading-relaxed">
+                        Conquiste o corpo e a mente que você sempre desejou. Ambiente climatizado, equipamentos biomecânicos modernos, acompanhamento individualizado e aulas coletivas eletrizantes.
+                    </p>
+
+                    <!-- CTAS DA HERO -->
+                    <div class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start pt-2">
+                        <a href="#agendar" class="px-8 py-4 rounded-xl bg-brand hover:bg-brand-hover text-white font-extrabold text-base uppercase tracking-wider shadow-glow hover:shadow-glow-lg transition-all duration-300 flex items-center justify-center gap-3 group">
+                            <span>Agendar Aula Experimental</span>
+                            <i class="fa-solid fa-arrow-right group-hover:translate-x-1 transition-transform"></i>
+                        </a>
+                        <a href="#planos" class="px-8 py-4 rounded-xl glass-panel hover:bg-white/10 text-white font-bold text-base uppercase tracking-wider border border-white/20 transition-all duration-300 flex items-center justify-center gap-2">
+                            <i class="fa-solid fa-tags text-brand"></i> Ver Planos e Preços
+                        </a>
+                    </div>
+                </div>
+
+                <!-- CARD DESTAQUE DIREITA (HERO DESTAQUE) -->
+                <div class="lg:col-span-4 hidden lg:block">
+                    <div class="glass-card p-6 rounded-2xl relative overflow-hidden border border-brand/30">
+                        <div class="absolute top-0 right-0 w-32 h-32 bg-brand/10 rounded-full filter blur-2xl"></div>
+                        <div class="flex items-center gap-4 mb-4">
+                            <div class="w-12 h-12 rounded-full bg-brand/20 text-brand flex items-center justify-center text-xl font-bold">
+                                <i class="fa-solid fa-trophy"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-white text-lg">Padrão Premium</h4>
+                                <p class="text-xs text-gray-400">Resultados rápidos e seguros</p>
+                            </div>
+                        </div>
+                        <p class="text-sm text-gray-300 mb-6 italic">
+                            "Treinos adaptados para iniciantes e atletas avançados. Aqui sua evolução é levada a sério todos os dias!"
+                        </p>
+                        <div class="p-4 rounded-xl bg-black/40 border border-white/5 flex items-center justify-between">
+                            <span class="text-xs text-gray-400">Próxima Aula Hoje</span>
+                            <span class="text-xs font-bold text-brand uppercase bg-brand/10 px-2 py-1 rounded">18:00 - Cross Training</span>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- BARRA DE ESTATÍSTICAS MOTIVACIONAIS -->
+            <div class="mt-16 grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6 pt-8 border-t border-white/10">
+                <div class="glass-card p-5 rounded-2xl text-center">
+                    <span class="font-display text-3xl sm:text-4xl font-extrabold text-white block">2.500+</span>
+                    <span class="text-xs sm:text-sm text-gray-400 uppercase tracking-wider font-semibold">Alunos Ativos</span>
+                </div>
+                <div class="glass-card p-5 rounded-2xl text-center">
+                    <span class="font-display text-3xl sm:text-4xl font-extrabold text-brand block">100%</span>
+                    <span class="text-xs sm:text-sm text-gray-400 uppercase tracking-wider font-semibold">Equipamentos de Ponta</span>
+                </div>
+                <div class="glass-card p-5 rounded-2xl text-center">
+                    <span class="font-display text-3xl sm:text-4xl font-extrabold text-white block">15+</span>
+                    <span class="text-xs sm:text-sm text-gray-400 uppercase tracking-wider font-semibold">Professores Certificados</span>
+                </div>
+                <div class="glass-card p-5 rounded-2xl text-center">
+                    <span class="font-display text-3xl sm:text-4xl font-extrabold text-accentGold block">08 Anos</span>
+                    <span class="text-xs sm:text-sm text-gray-400 uppercase tracking-wider font-semibold">De Tradição e Excelência</span>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- SEÇÃO DE MODALIDADES -->
+    <section id="modalidades" class="py-24 relative bg-darkbg">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="text-brand font-bold uppercase tracking-widest text-sm">Diversidade & Alta Performance</span>
+                <h2 class="font-display text-3xl sm:text-5xl font-extrabold uppercase text-white mt-2">
+                    NOSSAS <span class="text-brand">MODALIDADES</span>
+                </h2>
+                <div class="w-20 h-1 bg-brand mx-auto mt-4 rounded-full"></div>
+                <p class="text-gray-400 mt-4 text-base sm:text-lg">
+                    Encontre o treino perfeito para o seu estilo de vida. Aulas dinâmicas, instrutores motivadores e infraestrutura completa.
+                </p>
+            </div>
+
+            <!-- GRID DE CARDS DE MODALIDADES -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                
+                <!-- CARD 1: Musculação -->
+                <div class="glass-card rounded-2xl overflow-hidden flex flex-col group">
+                    <div class="relative h-56 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1581009146145-b5ef050c2e1e?auto=format&fit=crop&w=800&q=80" 
+                             alt="Musculação" 
+                             class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                        <div class="absolute inset-0 bg-gradient-to-t from-cardbg via-transparent to-transparent"></div>
+                        <span class="absolute top-4 right-4 bg-brand text-white text-xs font-bold uppercase px-3 py-1 rounded-full shadow-glow">
+                            Alta Intensidade
+                        </span>
+                    </div>
+                    <div class="p-6 flex-1 flex flex-col justify-between">
+                        <div>
+                            <div class="flex items-center gap-3 mb-2">
+                                <i class="fa-solid fa-dumbbell text-brand text-xl"></i>
+                                <h3 class="font-display text-2xl font-bold uppercase text-white">Musculação</h3>
+                            </div>
+                            <p class="text-gray-400 text-sm mb-6 leading-relaxed">
+                                Equipamentos biomecânicos de alta tecnologia para hipertrofia, ganho de força, definição muscular e reabilitação física.
+                            </p>
+                        </div>
+                        <button onclick="openModalityModal('musculacao')" class="w-full py-3 rounded-xl bg-white/5 hover:bg-brand text-white font-bold text-sm uppercase tracking-wider transition-all duration-300 border border-white/10 flex items-center justify-center gap-2">
+                            <span>Saber Mais</span>
+                            <i class="fa-solid fa-circle-info"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- CARD 2: Spinning -->
+                <div class="glass-card rounded-2xl overflow-hidden flex flex-col group">
+                    <div class="relative h-56 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1518611012118-696072aa579a?auto=format&fit=crop&w=800&q=80" 
+                             alt="Spinning / Indoor Cycling" 
+                             class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                        <div class="absolute inset-0 bg-gradient-to-t from-cardbg via-transparent to-transparent"></div>
+                        <span class="absolute top-4 right-4 bg-red-600 text-white text-xs font-bold uppercase px-3 py-1 rounded-full">
+                            Extrema Queima Calórica
+                        </span>
+                    </div>
+                    <div class="p-6 flex-1 flex flex-col justify-between">
+                        <div>
+                            <div class="flex items-center gap-3 mb-2">
+                                <i class="fa-solid fa-person-biking text-brand text-xl"></i>
+                                <h3 class="font-display text-2xl font-bold uppercase text-white">Spinning Cycling</h3>
+                            </div>
+                            <p class="text-gray-400 text-sm mb-6 leading-relaxed">
+                                Treinos cardio imersivos em sala climatizada com luzes, playlist energizante e simulação de subidas e tiros de velocidade.
+                            </p>
+                        </div>
+                        <button onclick="openModalityModal('spinning')" class="w-full py-3 rounded-xl bg-white/5 hover:bg-brand text-white font-bold text-sm uppercase tracking-wider transition-all duration-300 border border-white/10 flex items-center justify-center gap-2">
+                            <span>Saber Mais</span>
+                            <i class="fa-solid fa-circle-info"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- CARD 3: Cross Training -->
+                <div class="glass-card rounded-2xl overflow-hidden flex flex-col group">
+                    <div class="relative h-56 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1517838277536-f5f99be501cd?auto=format&fit=crop&w=800&q=80" 
+                             alt="Cross Training" 
+                             class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                        <div class="absolute inset-0 bg-gradient-to-t from-cardbg via-transparent to-transparent"></div>
+                        <span class="absolute top-4 right-4 bg-brand text-white text-xs font-bold uppercase px-3 py-1 rounded-full shadow-glow">
+                            Condicionamento Total
+                        </span>
+                    </div>
+                    <div class="p-6 flex-1 flex flex-col justify-between">
+                        <div>
+                            <div class="flex items-center gap-3 mb-2">
+                                <i class="fa-solid fa-fire text-brand text-xl"></i>
+                                <h3 class="font-display text-2xl font-bold uppercase text-white">Cross Training</h3>
+                            </div>
+                            <p class="text-gray-400 text-sm mb-6 leading-relaxed">
+                                Treino funcional de alta intensidade combinando levantamento de peso, agilidade e resistência em um box completo.
+                            </p>
+                        </div>
+                        <button onclick="openModalityModal('crosstraining')" class="w-full py-3 rounded-xl bg-white/5 hover:bg-brand text-white font-bold text-sm uppercase tracking-wider transition-all duration-300 border border-white/10 flex items-center justify-center gap-2">
+                            <span>Saber Mais</span>
+                            <i class="fa-solid fa-circle-info"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- CARD 4: Muay Thai & Lutas -->
+                <div class="glass-card rounded-2xl overflow-hidden flex flex-col group">
+                    <div class="relative h-56 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1549719386-74dfcbf7dbed?auto=format&fit=crop&w=800&q=80" 
+                             alt="Muay Thai & Lutas" 
+                             class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                        <div class="absolute inset-0 bg-gradient-to-t from-cardbg via-transparent to-transparent"></div>
+                        <span class="absolute top-4 right-4 bg-orange-600 text-white text-xs font-bold uppercase px-3 py-1 rounded-full">
+                            Defesa & Disciplina
+                        </span>
+                    </div>
+                    <div class="p-6 flex-1 flex flex-col justify-between">
+                        <div>
+                            <div class="flex items-center gap-3 mb-2">
+                                <i class="fa-solid fa-hand-fist text-brand text-xl"></i>
+                                <h3 class="font-display text-2xl font-bold uppercase text-white">Muay Thai & Lutas</h3>
+                            </div>
+                            <p class="text-gray-400 text-sm mb-6 leading-relaxed">
+                                Desenvolva disciplina, agilidade, foco e gaste mais de 800 calorias por aula com mestres credenciados.
+                            </p>
+                        </div>
+                        <button onclick="openModalityModal('muaythai')" class="w-full py-3 rounded-xl bg-white/5 hover:bg-brand text-white font-bold text-sm uppercase tracking-wider transition-all duration-300 border border-white/10 flex items-center justify-center gap-2">
+                            <span>Saber Mais</span>
+                            <i class="fa-solid fa-circle-info"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- CARD 5: Aula da Melhor Idade -->
+                <div class="glass-card rounded-2xl overflow-hidden flex flex-col group">
+                    <div class="relative h-56 overflow-hidden">
+                        <img src="https://i.postimg.cc/Bv7nSB3C/Aula-Melhor-idade.jpg" 
+                             alt="Aula da Melhor Idade" 
+                             class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                        <div class="absolute inset-0 bg-gradient-to-t from-cardbg via-transparent to-transparent"></div>
+                        <span class="absolute top-4 right-4 bg-teal-600 text-white text-xs font-bold uppercase px-3 py-1 rounded-full">
+                            Saúde & Vitalidade
+                        </span>
+                    </div>
+                    <div class="p-6 flex-1 flex flex-col justify-between">
+                        <div>
+                            <div class="flex items-center gap-3 mb-2">
+                                <i class="fa-solid fa-heart-pulse text-brand text-xl"></i>
+                                <h3 class="font-display text-2xl font-bold uppercase text-white">Melhor Idade</h3>
+                            </div>
+                            <p class="text-gray-400 text-sm mb-6 leading-relaxed">
+                                Exercícios adaptados focados em mobilidade, fortalecimento articular, equilíbrio e socialização com total segurança.
+                            </p>
+                        </div>
+                        <button onclick="openModalityModal('fitdance')" class="w-full py-3 rounded-xl bg-white/5 hover:bg-brand text-white font-bold text-sm uppercase tracking-wider transition-all duration-300 border border-white/10 flex items-center justify-center gap-2">
+                            <span>Saber Mais</span>
+                            <i class="fa-solid fa-circle-info"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- CARD 6: Alongamento -->
+                <div class="glass-card rounded-2xl overflow-hidden flex flex-col group">
+                    <div class="relative h-56 overflow-hidden">
+                        <img src="https://i.postimg.cc/fycs9c43/Forca-alongamento.jpg" 
+                             alt="Alongamento & Mobilidade" 
+                             class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                        <div class="absolute inset-0 bg-gradient-to-t from-cardbg via-transparent to-transparent"></div>
+                        <span class="absolute top-4 right-4 bg-emerald-600 text-white text-xs font-bold uppercase px-3 py-1 rounded-full">
+                            Flexibilidade & Postura
+                        </span>
+                    </div>
+                    <div class="p-6 flex-1 flex flex-col justify-between">
+                        <div>
+                            <div class="flex items-center gap-3 mb-2">
+                                <i class="fa-solid fa-child-reaching text-brand text-xl"></i>
+                                <h3 class="font-display text-2xl font-bold uppercase text-white">Alongamento</h3>
+                            </div>
+                            <p class="text-gray-400 text-sm mb-6 leading-relaxed">
+                                Melhore a flexibilidade, amplitude de movimento e postura, prevenindo lesões e aliviando dores e tensões musculares.
+                            </p>
+                        </div>
+                        <button onclick="openModalityModal('pilates')" class="w-full py-3 rounded-xl bg-white/5 hover:bg-brand text-white font-bold text-sm uppercase tracking-wider transition-all duration-300 border border-white/10 flex items-center justify-center gap-2">
+                            <span>Saber Mais</span>
+                            <i class="fa-solid fa-circle-info"></i>
+                        </button>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+
+    <!-- SEÇÃO DE PLANOS DE PREÇOS -->
+    <section id="planos" class="py-24 relative bg-cardbg/50 border-y border-white/5">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="text-brand font-bold uppercase tracking-widest text-sm">Sem Taxas Escondidas</span>
+                <h2 class="font-display text-3xl sm:text-5xl font-extrabold uppercase text-white mt-2">
+                    ESCOLHA O PLANO <span class="text-brand">PERFEITO</span>
+                </h2>
+                <div class="w-20 h-1 bg-brand mx-auto mt-4 rounded-full"></div>
+                <p class="text-gray-400 mt-4 text-base sm:text-lg">
+                    Planos flexíveis pensados para se adequar à sua rotina e aos seus objetivos.
+                </p>
+            </div>
+
+            <!-- CARDS DE PLANOS -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 items-stretch">
+                
+                <!-- PLANO MENSAL -->
+                <div class="glass-card rounded-3xl p-8 flex flex-col justify-between relative border border-white/10">
+                    <div>
+                        <div class="mb-6">
+                            <span class="text-xs font-bold uppercase tracking-wider text-gray-400 bg-white/5 px-3 py-1 rounded-full">Plano Flexível</span>
+                            <h3 class="font-display text-3xl font-bold text-white uppercase mt-3">Mensal</h3>
+                            <p class="text-xs text-gray-400 mt-1">Treine sem compromisso de fidelidade</p>
+                        </div>
+
+                        <div class="mb-8">
+                            <div class="flex items-baseline">
+                                <span class="text-2xl font-bold text-gray-300">R$</span>
+                                <span class="font-display text-5xl font-extrabold text-white ml-1">129</span>
+                                <span class="text-xl font-bold text-gray-300">,90</span>
+                                <span class="text-gray-400 text-sm ml-2">/mês</span>
+                            </div>
+                            <span class="text-xs text-gray-400 mt-1 block">Cancelamento gratuito a qualquer momento</span>
+                        </div>
+
+                        <!-- BENEFÍCIOS -->
+                        <ul class="space-y-4 text-sm text-gray-300 mb-8">
+                            <li class="flex items-center gap-3">
+                                <i class="fa-solid fa-circle-check text-brand text-base"></i>
+                                <span>Acesso ilimitado à Musculação</span>
+                            </li>
+                            <li class="flex items-center gap-3">
+                                <i class="fa-solid fa-circle-check text-brand text-base"></i>
+                                <span>Área de Aeróbicos completa</span>
+                            </li>
+                            <li class="flex items-center gap-3">
+                                <i class="fa-solid fa-circle-check text-brand text-base"></i>
+                                <span>Armários rotativos grátis</span>
+                            </li>
+                            <li class="flex items-center gap-3 text-gray-400">
+                                <i class="fa-solid fa-circle-xmark text-gray-600 text-base"></i>
+                                <span class="line-through">Aulas coletivas inclusas</span>
+                            </li>
+                            <li class="flex items-center gap-3 text-gray-400">
+                                <i class="fa-solid fa-circle-xmark text-gray-600 text-base"></i>
+                                <span class="line-through">Acompanhamento Nutricional</span>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <button onclick="selectPlan('Plano Mensal - R$ 129,90')" class="w-full py-4 rounded-xl bg-white/10 hover:bg-brand text-white font-bold uppercase tracking-wider text-sm transition-all duration-300 border border-white/10 hover:shadow-glow">
+                        Garantir Este Plano
+                    </button>
+                </div>
+
+                <!-- PLANO TRIMESTRAL (DESTAQUE / POPULAR) -->
+                <div class="glass-card rounded-3xl p-8 flex flex-col justify-between relative border-2 border-brand bg-cardbg shadow-glow-lg transform md:-translate-y-4">
+                    <!-- BADGE RECOMENDADO -->
+                    <div class="absolute -top-5 left-1/2 -translate-x-1/2 bg-gradient-to-r from-brand to-red-600 text-white font-extrabold text-xs uppercase px-6 py-2 rounded-full shadow-glow tracking-widest flex items-center gap-2">
+                        <i class="fa-solid fa-star"></i> MAIS POPULAR - 15% OFF
+                    </div>
+
+                    <div>
+                        <div class="mb-6 pt-2">
+                            <span class="text-xs font-bold uppercase tracking-wider text-brand font-mono">Melhor Custo-Benefício</span>
+                            <h3 class="font-display text-3xl font-bold text-white uppercase mt-2">Trimestral</h3>
+                            <p class="text-xs text-gray-300 mt-1">O plano perfeito para ver resultados reais</p>
+                        </div>
+
+                        <div class="mb-8">
+                            <div class="flex items-baseline">
+                                <span class="text-2xl font-bold text-brand">R$</span>
+                                <span class="font-display text-6xl font-extrabold text-white ml-1">99</span>
+                                <span class="text-xl font-bold text-brand">,90</span>
+                                <span class="text-gray-300 text-sm ml-2">/mês</span>
+                            </div>
+                            <span class="text-xs text-brand font-semibold mt-1 block">Em até 3x sem juros no cartão</span>
+                        </div>
+
+                        <!-- BENEFÍCIOS -->
+                        <ul class="space-y-4 text-sm text-gray-200 mb-8">
+                            <li class="flex items-center gap-3">
+                                <i class="fa-solid fa-circle-check text-brand text-base"></i>
+                                <span class="font-medium">Tudo do Plano Mensal</span>
+                            </li>
+                            <li class="flex items-center gap-3">
+                                <i class="fa-solid fa-circle-check text-brand text-base"></i>
+                                <span>Acesso a <strong>2 Modalidades Coletivas</strong></span>
+                            </li>
+                            <li class="flex items-center gap-3">
+                                <i class="fa-solid fa-circle-check text-brand text-base"></i>
+                                <span><strong>Avaliação Física Inicial</strong> Inclusa</span>
+                            </li>
+                            <li class="flex items-center gap-3">
+                                <i class="fa-solid fa-circle-check text-brand text-base"></i>
+                                <span>Ficha de treino digital no App</span>
+                            </li>
+                            <li class="flex items-center gap-3 text-gray-400">
+                                <i class="fa-solid fa-circle-xmark text-gray-600 text-base"></i>
+                                <span class="line-through">Convidados ilimitados</span>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <button onclick="selectPlan('Plano Trimestral - R$ 99,90/mês')" class="w-full py-4 rounded-xl bg-brand hover:bg-brand-hover text-white font-extrabold uppercase tracking-wider text-sm transition-all duration-300 shadow-glow hover:shadow-glow-lg">
+                        Garantir Este Plano
+                    </button>
+                </div>
+
+                <!-- PLANO ANUAL VIP -->
+                <div class="glass-card rounded-3xl p-8 flex flex-col justify-between relative border border-accentGold/30">
+                    <div>
+                        <div class="mb-6">
+                            <span class="text-xs font-bold uppercase tracking-wider text-accentGold bg-accentGold/10 px-3 py-1 rounded-full border border-accentGold/20">Acesso Total VIP</span>
+                            <h3 class="font-display text-3xl font-bold text-white uppercase mt-3">Anual VIP</h3>
+                            <p class="text-xs text-gray-400 mt-1">A experiência definitiva em saúde</p>
+                        </div>
+
+                        <div class="mb-8">
+                            <div class="flex items-baseline">
+                                <span class="text-2xl font-bold text-accentGold">R$</span>
+                                <span class="font-display text-5xl font-extrabold text-white ml-1">79</span>
+                                <span class="text-xl font-bold text-accentGold">,90</span>
+                                <span class="text-gray-400 text-sm ml-2">/mês</span>
+                            </div>
+                            <span class="text-xs text-accentGold font-semibold mt-1 block">Economia anual de mais de R$ 600</span>
+                        </div>
+
+                        <!-- BENEFÍCIOS -->
+                        <ul class="space-y-4 text-sm text-gray-300 mb-8">
+                            <li class="flex items-center gap-3">
+                                <i class="fa-solid fa-crown text-accentGold text-base"></i>
+                                <span><strong>Acesso Total a TODAS Modalidades</strong></span>
+                            </li>
+                            <li class="flex items-center gap-3">
+                                <i class="fa-solid fa-circle-check text-accentGold text-base"></i>
+                                <span>Avaliação Biométrica a cada 3 meses</span>
+                            </li>
+                            <li class="flex items-center gap-3">
+                                <i class="fa-solid fa-circle-check text-accentGold text-base"></i>
+                                <span>Direito a 1 Convidado Grátis por mês</span>
+                            </li>
+                            <li class="flex items-center gap-3">
+                                <i class="fa-solid fa-circle-check text-accentGold text-base"></i>
+                                <span>Camiseta Exclusiva Força Total</span>
+                            </li>
+                            <li class="flex items-center gap-3">
+                                <i class="fa-solid fa-circle-check text-accentGold text-base"></i>
+                                <span>Direito a trancar por até 30 dias</span>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <button onclick="selectPlan('Plano Anual VIP - R$ 79,90/mês')" class="w-full py-4 rounded-xl bg-gradient-to-r from-amber-500 to-amber-600 hover:from-amber-600 hover:to-amber-700 text-black font-extrabold uppercase tracking-wider text-sm transition-all duration-300 shadow-gold-glow">
+                        Garantir Este Plano VIP
+                    </button>
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+
+    <!-- SEÇÃO DE HORÁRIOS -->
+    <section id="horarios" class="py-24 relative bg-darkbg">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            
+            <div class="text-center max-w-3xl mx-auto mb-12">
+                <span class="text-brand font-bold uppercase tracking-widest text-sm">Organize Sua Rotina</span>
+                <h2 class="font-display text-3xl sm:text-5xl font-extrabold uppercase text-white mt-2">
+                    GRADE DE <span class="text-brand">HORÁRIOS</span>
+                </h2>
+                <div class="w-20 h-1 bg-brand mx-auto mt-4 rounded-full"></div>
+                <p class="text-gray-400 mt-4 text-base sm:text-lg">
+                    Aulas ocorrendo ao longo de todo o dia para você nunca perder um treino.
+                </p>
+            </div>
+
+            <!-- FILTROS DE DIAS DA SEMANA -->
+            <div class="flex flex-wrap justify-center gap-3 mb-10" id="schedule-tabs">
+                <button onclick="filterSchedule('seg-sex')" class="schedule-tab active px-6 py-3 rounded-xl font-bold text-sm uppercase transition-all bg-brand text-white shadow-glow">
+                    Segunda a Sexta
+                </button>
+                <button onclick="filterSchedule('sabado')" class="schedule-tab px-6 py-3 rounded-xl font-bold text-sm uppercase transition-all bg-cardbg text-gray-400 hover:text-white hover:bg-white/10 border border-white/10">
+                    Sábados
+                </button>
+                <button onclick="filterSchedule('domingo')" class="schedule-tab px-6 py-3 rounded-xl font-bold text-sm uppercase transition-all bg-cardbg text-gray-400 hover:text-white hover:bg-white/10 border border-white/10">
+                    Domingos & Feriados
+                </button>
+            </div>
+
+            <!-- TABELA / LISTA DE HORÁRIOS -->
+            <div class="glass-card rounded-2xl p-6 overflow-hidden">
+                
+                <!-- SEGUNDA A SEXTA -->
+                <div id="schedule-seg-sex" class="schedule-content space-y-4">
+                    <div class="grid grid-cols-1 md:grid-cols-4 gap-4 p-4 rounded-xl bg-black/40 border border-white/5 items-center hover:border-brand/40 transition-colors">
+                        <div class="flex items-center gap-3">
+                            <span class="w-10 h-10 rounded-lg bg-brand/20 text-brand flex items-center justify-center font-bold font-mono text-sm">06:00</span>
+                            <span class="font-bold text-white text-lg">Spinning Cycling</span>
+                        </div>
+                        <div class="text-gray-400 text-sm"><i class="fa-solid fa-user-tie text-brand mr-2"></i>Prof. Carlos Silva</div>
+                        <div class="text-gray-400 text-sm"><i class="fa-solid fa-location-dot text-brand mr-2"></i>Sala Cardio 01</div>
+                        <div><span class="bg-red-500/20 text-red-400 text-xs font-bold px-3 py-1 rounded-full border border-red-500/30">Alta Intensidade</span></div>
+                    </div>
+
+                    <div class="grid grid-cols-1 md:grid-cols-4 gap-4 p-4 rounded-xl bg-black/40 border border-white/5 items-center hover:border-brand/40 transition-colors">
+                        <div class="flex items-center gap-3">
+                            <span class="w-10 h-10 rounded-lg bg-brand/20 text-brand flex items-center justify-center font-bold font-mono text-sm">07:30</span>
+                            <span class="font-bold text-white text-lg">Cross Training</span>
+                        </div>
+                        <div class="text-gray-400 text-sm"><i class="fa-solid fa-user-tie text-brand mr-2"></i>Profª. Fernanda Lima</div>
+                        <div class="text-gray-400 text-sm"><i class="fa-solid fa-location-dot text-brand mr-2"></i>Box Central</div>
+                        <div><span class="bg-brand/20 text-brand text-xs font-bold px-3 py-1 rounded-full border border-brand/30">Força & WOD</span></div>
+                    </div>
+
+                    <div class="grid grid-cols-1 md:grid-cols-4 gap-4 p-4 rounded-xl bg-black/40 border border-white/5 items-center hover:border-brand/40 transition-colors">
+                        <div class="flex items-center gap-3">
+                            <span class="w-10 h-10 rounded-lg bg-brand/20 text-brand flex items-center justify-center font-bold font-mono text-sm">09:00</span>
+                            <span class="font-bold text-white text-lg">Alongamento & Mobilidade</span>
+                        </div>
+                        <div class="text-gray-400 text-sm"><i class="fa-solid fa-user-tie text-brand mr-2"></i>Profª. Juliana Mendes</div>
+                        <div class="text-gray-400 text-sm"><i class="fa-solid fa-location-dot text-brand mr-2"></i>Sala 01 / Alongamento</div>
+                        <div><span class="bg-emerald-500/20 text-emerald-400 text-xs font-bold px-3 py-1 rounded-full border border-emerald-500/30">Flexibilidade & Core</span></div>
+                    </div>
+                        <div class="text-gray-400 text-sm"><i class="fa-solid fa-user-tie text-brand mr-2"></i>Profª. Juliana Mendes</div>
+                        <div class="text-gray-400 text-sm"><i class="fa-solid fa-location-dot text-brand mr-2"></i>Studio Pilates</div>
+                        <div><span class="bg-emerald-500/20 text-emerald-400 text-xs font-bold px-3 py-1 rounded-full border border-emerald-500/30">Equilíbrio & Core</span></div>
+                    </div>
+
+                    <div class="grid grid-cols-1 md:grid-cols-4 gap-4 p-4 rounded-xl bg-black/40 border border-white/5 items-center hover:border-brand/40 transition-colors">
+                        <div class="flex items-center gap-3">
+                            <span class="w-10 h-10 rounded-lg bg-brand/20 text-brand flex items-center justify-center font-bold font-mono text-sm">18:00</span>
+                            <span class="font-bold text-white text-lg">Muay Thai & Lutas</span>
+                        </div>
+                        <div class="text-gray-400 text-sm"><i class="fa-solid fa-user-tie text-brand mr-2"></i>Mestre Mário Rocha</div>
+                        <div class="text-gray-400 text-sm"><i class="fa-solid fa-location-dot text-brand mr-2"></i>Tatame Principal</div>
+                        <div><span class="bg-orange-500/20 text-orange-400 text-xs font-bold px-3 py-1 rounded-full border border-orange-500/30">Defesa Personal</span></div>
+                    </div>
+
+                    <div class="grid grid-cols-1 md:grid-cols-4 gap-4 p-4 rounded-xl bg-black/40 border border-white/5 items-center hover:border-brand/40 transition-colors">
+                        <div class="flex items-center gap-3">
+                            <span class="w-10 h-10 rounded-lg bg-brand/20 text-brand flex items-center justify-center font-bold font-mono text-sm">15:00</span>
+                            <span class="font-bold text-white text-lg">Aula da Melhor Idade</span>
+                        </div>
+                        <div class="text-gray-400 text-sm"><i class="fa-solid fa-user-tie text-brand mr-2"></i>Profª. Camila Alves</div>
+                        <div class="text-gray-400 text-sm"><i class="fa-solid fa-location-dot text-brand mr-2"></i>Sala Multiuso</div>
+                        <div><span class="bg-teal-500/20 text-teal-400 text-xs font-bold px-3 py-1 rounded-full border border-teal-500/30">Saúde & Vitalidade</span></div>
+                    </div>
+                </div>
+
+                <!-- SÁBADOS -->
+                <div id="schedule-sabado" class="schedule-content hidden space-y-4">
+                    <div class="grid grid-cols-1 md:grid-cols-4 gap-4 p-4 rounded-xl bg-black/40 border border-white/5 items-center hover:border-brand/40 transition-colors">
+                        <div class="flex items-center gap-3">
+                            <span class="w-10 h-10 rounded-lg bg-brand/20 text-brand flex items-center justify-center font-bold font-mono text-sm">09:00</span>
+                            <span class="font-bold text-white text-lg">Super Spinning WOD</span>
+                        </div>
+                        <div class="text-gray-400 text-sm"><i class="fa-solid fa-user-tie text-brand mr-2"></i>Prof. Carlos Silva</div>
+                        <div class="text-gray-400 text-sm"><i class="fa-solid fa-location-dot text-brand mr-2"></i>Sala Cardio 01</div>
+                        <div><span class="bg-red-500/20 text-red-400 text-xs font-bold px-3 py-1 rounded-full">Especial Fim de Semana</span></div>
+                    </div>
+
+                    <div class="grid grid-cols-1 md:grid-cols-4 gap-4 p-4 rounded-xl bg-black/40 border border-white/5 items-center hover:border-brand/40 transition-colors">
+                        <div class="flex items-center gap-3">
+                            <span class="w-10 h-10 rounded-lg bg-brand/20 text-brand flex items-center justify-center font-bold font-mono text-sm">10:30</span>
+                            <span class="font-bold text-white text-lg">Cross Functional Team</span>
+                        </div>
+                        <div class="text-gray-400 text-sm"><i class="fa-solid fa-user-tie text-brand mr-2"></i>Profª. Fernanda Lima</div>
+                        <div class="text-gray-400 text-sm"><i class="fa-solid fa-location-dot text-brand mr-2"></i>Box Central</div>
+                        <div><span class="bg-brand/20 text-brand text-xs font-bold px-3 py-1 rounded-full">Treino em Duplas</span></div>
+                    </div>
+                </div>
+
+                <!-- DOMINGOS E FERIADOS -->
+                <div id="schedule-domingo" class="schedule-content hidden space-y-4">
+                    <div class="grid grid-cols-1 md:grid-cols-4 gap-4 p-4 rounded-xl bg-black/40 border border-white/5 items-center hover:border-brand/40 transition-colors">
+                        <div class="flex items-center gap-3">
+                            <span class="w-10 h-10 rounded-lg bg-brand/20 text-brand flex items-center justify-center font-bold font-mono text-sm">10:00</span>
+                            <span class="font-bold text-white text-lg">Musculação Livre</span>
+                        </div>
+                        <div class="text-gray-400 text-sm"><i class="fa-solid fa-user-tie text-brand mr-2"></i>Equipe de Plantão</div>
+                        <div class="text-gray-400 text-sm"><i class="fa-solid fa-location-dot text-brand mr-2"></i>Área Geral</div>
+                        <div><span class="bg-blue-500/20 text-blue-400 text-xs font-bold px-3 py-1 rounded-full">Funcionamento até 14:00</span></div>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+
+    <!-- SEÇÃO DE DEPOIMENTOS E FAQ -->
+    <section id="depoimentos" class="py-24 relative bg-cardbg/40 border-t border-white/5">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            
+            <!-- DEPOIMENTOS -->
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="text-brand font-bold uppercase tracking-widest text-sm">Histórias de Sucesso</span>
+                <h2 class="font-display text-3xl sm:text-5xl font-extrabold uppercase text-white mt-2">
+                    O QUE DIZEM <span class="text-brand">NOSSOS ALUNOS</span>
+                </h2>
+                <div class="w-20 h-1 bg-brand mx-auto mt-4 rounded-full"></div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-24">
+                
+                <div class="glass-card rounded-2xl p-6 flex flex-col justify-between">
+                    <div>
+                        <div class="flex text-amber-400 gap-1 mb-4">
+                            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                        </div>
+                        <p class="text-gray-300 text-sm italic mb-6">
+                            "Treino na Força Total há 2 anos. Perdi 18kg com as aulas de Spinning e acompanhamento dos professores. O ambiente é acolhedor e super motivador!"
+                        </p>
+                    </div>
+                    <div class="flex items-center gap-4 pt-4 border-t border-white/10">
+                        <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=150&q=80" alt="Mariana Souza" class="w-12 h-12 rounded-full object-cover border-2 border-brand">
+                        <div>
+                            <h4 class="font-bold text-white text-sm">Mariana Souza</h4>
+                            <span class="text-xs text-gray-400">Aluna há 2 anos</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="glass-card rounded-2xl p-6 flex flex-col justify-between">
+                    <div>
+                        <div class="flex text-amber-400 gap-1 mb-4">
+                            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                        </div>
+                        <p class="text-gray-300 text-sm italic mb-6">
+                            "Os equipamentos biomecânicos da área de musculação são absurdos! Melhorei minhas cargas sem sentir dores nas articulações. Nota 1000!"
+                        </p>
+                    </div>
+                    <div class="flex items-center gap-4 pt-4 border-t border-white/10">
+                        <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=150&q=80" alt="Lucas Barbosa" class="w-12 h-12 rounded-full object-cover border-2 border-brand">
+                        <div>
+                            <h4 class="font-bold text-white text-sm">Lucas Barbosa</h4>
+                            <span class="text-xs text-gray-400">Atleta de Musculação</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="glass-card rounded-2xl p-6 flex flex-col justify-between">
+                    <div>
+                        <div class="flex text-amber-400 gap-1 mb-4">
+                            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                        </div>
+                        <p class="text-gray-300 text-sm italic mb-6">
+                            "Faço Muay Thai e Cross Training. A energia das aulas coletivas é contagiante! Nunca imaginei gostar tanto de praticar atividade física."
+                        </p>
+                    </div>
+                    <div class="flex items-center gap-4 pt-4 border-t border-white/10">
+                        <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=150&q=80" alt="Beatriz Costa" class="w-12 h-12 rounded-full object-cover border-2 border-brand">
+                        <div>
+                            <h4 class="font-bold text-white text-sm">Beatriz Costa</h4>
+                            <span class="text-xs text-gray-400">Aluna do Plano VIP</span>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- FAQ ACCORDION -->
+            <div id="faq" class="max-w-4xl mx-auto pt-8">
+                <div class="text-center mb-12">
+                    <span class="text-brand font-bold uppercase tracking-widest text-sm">Tire Suas Dúvidas</span>
+                    <h2 class="font-display text-3xl sm:text-4xl font-extrabold uppercase text-white mt-2">
+                        PERGUNTAS <span class="text-brand">FREQUENTES</span>
+                    </h2>
+                </div>
+
+                <div class="space-y-4">
+                    
+                    <div class="glass-card rounded-xl overflow-hidden">
+                        <button onclick="toggleFaq(this)" class="w-full p-5 text-left font-bold text-white flex justify-between items-center hover:text-brand transition-colors">
+                            <span>Como funciona a aula experimental gratuita?</span>
+                            <i class="fa-solid fa-chevron-down text-brand transition-transform"></i>
+                        </button>
+                        <div class="faq-answer hidden p-5 pt-0 text-gray-300 text-sm border-t border-white/5">
+                            É muito simples! Basta preencher o formulário abaixo ou chamar no WhatsApp. Você escolhe a modalidade, o dia e horário que deseja e tem acesso livre à academia no dia agendado com direito a acompanhamento de um instrutor.
+                        </div>
+                    </div>
+
+                    <div class="glass-card rounded-xl overflow-hidden">
+                        <button onclick="toggleFaq(this)" class="w-full p-5 text-left font-bold text-white flex justify-between items-center hover:text-brand transition-colors">
+                            <span>Preciso apresentar atestado médico para treinar?</span>
+                            <i class="fa-solid fa-chevron-down text-brand transition-transform"></i>
+                        </button>
+                        <div class="faq-answer hidden p-5 pt-0 text-gray-300 text-sm border-t border-white/5">
+                            Sim, solicitamos a anamnese e o atestado de aptidão física para garantir a sua segurança durante os treinos. Você também fará uma avaliação com nossa equipe de professores.
+                        </div>
+                    </div>
+
+                    <div class="glass-card rounded-xl overflow-hidden">
+                        <button onclick="toggleFaq(this)" class="w-full p-5 text-left font-bold text-white flex justify-between items-center hover:text-brand transition-colors">
+                            <span>Posso trancar o meu plano se precisar viajar?</span>
+                            <i class="fa-solid fa-chevron-down text-brand transition-transform"></i>
+                        </button>
+                        <div class="faq-answer hidden p-5 pt-0 text-gray-300 text-sm border-t border-white/5">
+                            No Plano Trimestral você tem até 15 dias de trancamento e no Plano Anual VIP até 30 dias de trancamento gratuito para usar quando precisar.
+                        </div>
+                    </div>
+
+                    <div class="glass-card rounded-xl overflow-hidden">
+                        <button onclick="toggleFaq(this)" class="w-full p-5 text-left font-bold text-white flex justify-between items-center hover:text-brand transition-colors">
+                            <span>A academia possui estacionamento próprio e vestiários?</span>
+                            <i class="fa-solid fa-chevron-down text-brand transition-transform"></i>
+                        </button>
+                        <div class="faq-answer hidden p-5 pt-0 text-gray-300 text-sm border-t border-white/5">
+                            Sim! Dispomos de estacionamento privativo gratuito para alunos com manobrista e vestiários amplos equipados com chuveiros quentes, secadores e armários com chave.
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- SEÇÃO DE FORMULÁRIO DE AGENDAMENTO -->
+    <section id="agendar" class="py-24 relative bg-darkbg">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="glass-card rounded-3xl p-8 sm:p-12 border-2 border-brand/30 relative overflow-hidden">
+                <!-- Efeito Glow de Fundo -->
+                <div class="absolute top-0 right-0 -mr-20 -mt-20 w-96 h-96 bg-brand/10 rounded-full filter blur-3xl pointer-events-none"></div>
+
+                <div class="grid lg:grid-cols-12 gap-12 items-center">
+                    
+                    <div class="lg:col-span-5 space-y-6">
+                        <span class="text-brand font-bold uppercase tracking-widest text-sm block">Vagas Limitadas</span>
+                        <h2 class="font-display text-3xl sm:text-5xl font-extrabold uppercase text-white leading-tight">
+                            AGENDE SUA <br><span class="text-brand">AULA GRÁTIS</span>
+                        </h2>
+                        <p class="text-gray-300 text-base leading-relaxed">
+                            Dê o primeiro passo para transformar sua rotina. Preencha seus dados ao lado e nossa equipe entrará em contato via WhatsApp para confirmar seu passe livre!
+                        </p>
+
+                        <div class="space-y-4 pt-4">
+                            <div class="flex items-center gap-4">
+                                <div class="w-10 h-10 rounded-xl bg-brand/20 text-brand flex items-center justify-center font-bold">
+                                    <i class="fa-solid fa-check"></i>
+                                </div>
+                                <span class="text-sm font-semibold text-gray-200">Acesso 100% Gratuito no Primeiro Dia</span>
+                            </div>
+                            <div class="flex items-center gap-4">
+                                <div class="w-10 h-10 rounded-xl bg-brand/20 text-brand flex items-center justify-center font-bold">
+                                    <i class="fa-solid fa-check"></i>
+                                </div>
+                                <span class="text-sm font-semibold text-gray-200">Acompanhamento Personalizado com Instrutor</span>
+                            </div>
+                            <div class="flex items-center gap-4">
+                                <div class="w-10 h-10 rounded-xl bg-brand/20 text-brand flex items-center justify-center font-bold">
+                                    <i class="fa-solid fa-check"></i>
+                                </div>
+                                <span class="text-sm font-semibold text-gray-200">Sem Compromisso ou Fidelidade Inicial</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- FORMULÁRIO -->
+                    <div class="lg:col-span-7 bg-black/50 p-6 sm:p-8 rounded-2xl border border-white/10">
+                        <form id="booking-form" onsubmit="handleFormSubmit(event)" class="space-y-5">
+                            
+                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
+                                <div>
+                                    <label class="block text-xs font-bold uppercase text-gray-300 mb-2">Nome Completo *</label>
+                                    <input type="text" id="form-name" required placeholder="Seu nome" class="w-full px-4 py-3 rounded-xl bg-white/5 border border-white/10 text-white placeholder-gray-500 focus:outline-none focus:border-brand focus:ring-1 focus:ring-brand text-sm">
+                                </div>
+                                <div>
+                                    <label class="block text-xs font-bold uppercase text-gray-300 mb-2">WhatsApp / Telefone *</label>
+                                    <input type="tel" id="form-phone" required placeholder="(11) 99999-9999" class="w-full px-4 py-3 rounded-xl bg-white/5 border border-white/10 text-white placeholder-gray-500 focus:outline-none focus:border-brand focus:ring-1 focus:ring-brand text-sm">
+                                </div>
+                            </div>
+
+                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
+                                <div>
+                                    <label class="block text-xs font-bold uppercase text-gray-300 mb-2">E-mail *</label>
+                                    <input type="email" id="form-email" required placeholder="seuemail@exemplo.com" class="w-full px-4 py-3 rounded-xl bg-white/5 border border-white/10 text-white placeholder-gray-500 focus:outline-none focus:border-brand focus:ring-1 focus:ring-brand text-sm">
+                                </div>
+                                <div>
+                                    <label class="block text-xs font-bold uppercase text-gray-300 mb-2">Modalidade Desejada *</label>
+                                    <select id="form-modality" required class="w-full px-4 py-3 rounded-xl bg-darkbg border border-white/10 text-white focus:outline-none focus:border-brand focus:ring-1 focus:ring-brand text-sm">
+                                        <option value="">Selecione uma modalidade</option>
+                                        <option value="Musculação">Musculação</option>
+                                        <option value="Spinning Cycling">Spinning Cycling</option>
+                                        <option value="Cross Training">Cross Training</option>
+                                        <option value="Muay Thai">Muay Thai & Lutas</option>
+                                        <option value="Melhor Idade">Aula da Melhor Idade</option>
+                                        <option value="Alongamento">Alongamento & Mobilidade</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
+                                <div>
+                                    <label class="block text-xs font-bold uppercase text-gray-300 mb-2">Dia de Preferência *</label>
+                                    <select id="form-day" required class="w-full px-4 py-3 rounded-xl bg-darkbg border border-white/10 text-white focus:outline-none focus:border-brand focus:ring-1 focus:ring-brand text-sm">
+                                        <option value="Hoje">Hoje mesmo</option>
+                                        <option value="Amanhã">Amanhã</option>
+                                        <option value="Segunda-feira">Segunda-feira</option>
+                                        <option value="Terça-feira">Terça-feira</option>
+                                        <option value="Quarta-feira">Quarta-feira</option>
+                                        <option value="Quinta-feira">Quinta-feira</option>
+                                        <option value="Sexta-feira">Sexta-feira</option>
+                                        <option value="Sábado">Sábado</option>
+                                    </select>
+                                </div>
+                                <div>
+                                    <label class="block text-xs font-bold uppercase text-gray-300 mb-2">Horário Pretendido *</label>
+                                    <select id="form-time" required class="w-full px-4 py-3 rounded-xl bg-darkbg border border-white/10 text-white focus:outline-none focus:border-brand focus:ring-1 focus:ring-brand text-sm">
+                                        <option value="Manhã (06:00 às 12:00)">Manhã (06:00 às 12:00)</option>
+                                        <option value="Tarde (12:00 às 18:00)">Tarde (12:00 às 18:00)</option>
+                                        <option value="Noite (18:00 às 22:00)">Noite (18:00 às 22:00)</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <div>
+                                <label class="block text-xs font-bold uppercase text-gray-300 mb-2">Plano de Interesse ou Mensagem (Opcional)</label>
+                                <textarea id="form-message" rows="3" placeholder="Gostaria de saber mais sobre algum plano específico?" class="w-full px-4 py-3 rounded-xl bg-white/5 border border-white/10 text-white placeholder-gray-500 focus:outline-none focus:border-brand focus:ring-1 focus:ring-brand text-sm"></textarea>
+                            </div>
+
+                            <button type="submit" class="w-full py-4 rounded-xl bg-brand hover:bg-brand-hover text-white font-extrabold uppercase tracking-wider text-base shadow-glow hover:shadow-glow-lg transition-all duration-300 flex items-center justify-center gap-3">
+                                <i class="fa-solid fa-paper-plane"></i> Confirmar Agendamento
+                            </button>
+                        </form>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- RODAPÉ & LOCALIZAÇÃO -->
+    <footer class="bg-cardbg pt-16 pb-8 border-t border-white/10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 mb-12">
+                
+                <!-- COLUNA 1: SOBRE -->
+                <div class="space-y-4">
+                    <div class="flex items-center gap-3">
+                        <div class="w-10 h-10 rounded-xl bg-brand text-white flex items-center justify-center text-xl font-bold shadow-glow">
+                            <i class="fa-solid fa-dumbbell"></i>
+                        </div>
+                        <span class="font-display text-xl font-bold text-white">FORÇA <span class="text-brand">TOTAL</span></span>
+                    </div>
+                    <p class="text-gray-400 text-sm leading-relaxed">
+                        Mais de 8 anos transformando vidas através da saúde, alta performance e bem-estar.
+                    </p>
+                    <div class="flex items-center gap-4 pt-2 text-xl text-gray-300">
+                        <a href="#" class="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center hover:bg-brand hover:text-white transition-colors" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                        <a href="#" class="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center hover:bg-brand hover:text-white transition-colors" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+                        <a href="#" class="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center hover:bg-brand hover:text-white transition-colors" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+                        <a href="#" class="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center hover:bg-brand hover:text-white transition-colors" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+                    </div>
+                </div>
+
+                <!-- COLUNA 2: HORÁRIO DE FUNCIONAMENTO -->
+                <div class="space-y-4">
+                    <h4 class="font-display text-lg font-bold text-white uppercase tracking-wider">Horários de Treino</h4>
+                    <ul class="space-y-2 text-sm text-gray-400">
+                        <li class="flex justify-between border-b border-white/5 pb-2">
+                            <span>Segunda a Sexta:</span>
+                            <span class="text-white font-semibold">06:00 - 23:00</span>
+                        </li>
+                        <li class="flex justify-between border-b border-white/5 pb-2">
+                            <span>Sábados:</span>
+                            <span class="text-white font-semibold">08:00 - 18:00</span>
+                        </li>
+                        <li class="flex justify-between border-b border-white/5 pb-2">
+                            <span>Domingos & Feriados:</span>
+                            <span class="text-white font-semibold">09:00 - 14:00</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- COLUNA 3: CONTATO -->
+                <div class="space-y-4">
+                    <h4 class="font-display text-lg font-bold text-white uppercase tracking-wider">Contato & Suporte</h4>
+                    <ul class="space-y-3 text-sm text-gray-400">
+                        <li class="flex items-center gap-3">
+                            <i class="fa-solid fa-phone text-brand"></i>
+                            <span>(11) 3456-7890</span>
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <i class="fa-brands fa-whatsapp text-emerald-500 text-base"></i>
+                            <span>(11) 99876-5432</span>
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <i class="fa-solid fa-envelope text-brand"></i>
+                            <span>contato@academiaforcatotal.com.br</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <i class="fa-solid fa-location-dot text-brand mt-1"></i>
+                            <span>Av. Paulista, 1500 - Bela Vista, São Paulo - SP</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- COLUNA 4: MAPA SIMULADO -->
+                <div class="space-y-4">
+                    <h4 class="font-display text-lg font-bold text-white uppercase tracking-wider">Nossa Unidade</h4>
+                    <div class="rounded-xl overflow-hidden glass-panel border border-white/10 relative h-36 flex items-center justify-center text-center p-4 group">
+                        <div class="absolute inset-0 bg-cover bg-center opacity-40 group-hover:scale-105 transition-transform" style="background-image: url('https://images.unsplash.com/photo-1526778548025-fa2f459cd5c1?auto=format&fit=crop&w=600&q=80');"></div>
+                        <div class="relative z-10">
+                            <i class="fa-solid fa-map-pin text-brand text-2xl mb-1 animate-bounce"></i>
+                            <span class="block text-xs font-bold uppercase text-white">Av. Paulista, 1500</span>
+                            <span class="text-[10px] text-gray-300">Estacionamento Grátis no Local</span>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="border-t border-white/10 pt-6 text-center text-xs text-gray-500 flex flex-col sm:flex-row justify-between items-center gap-4">
+                <p>&copy; 2026 Academia Força Total. Todos os direitos reservados.</p>
+                <div class="flex gap-4">
+                    <a href="#" class="hover:text-gray-300">Termos de Uso</a>
+                    <a href="#" class="hover:text-gray-300">Política de Privacidade</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- MODAL DETALHES DA MODALIDADE -->
+    <div id="modality-modal" class="fixed inset-0 z-50 hidden flex items-center justify-center p-4 bg-black/80 backdrop-blur-md">
+        <div class="glass-card rounded-3xl max-w-xl w-full p-8 relative border border-brand/40 shadow-glow-lg">
+            <button onclick="closeModalityModal()" class="absolute top-4 right-4 text-gray-400 hover:text-white text-xl w-10 h-10 rounded-full bg-white/5 flex items-center justify-center">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+            <div id="modal-modality-content">
+                <!-- Conteúdo Injetado via JavaScript -->
+            </div>
+        </div>
+    </div>
+
+    <!-- MODAL CONFIRMAÇÃO DO FORMULÁRIO -->
+    <div id="confirmation-modal" class="fixed inset-0 z-50 hidden flex items-center justify-center p-4 bg-black/85 backdrop-blur-md">
+        <div class="glass-card rounded-3xl max-w-md w-full p-8 text-center relative border-2 border-emerald-500 shadow-glow">
+            <div class="w-16 h-16 rounded-full bg-emerald-500/20 text-emerald-400 text-3xl flex items-center justify-center mx-auto mb-4 border border-emerald-500/40">
+                <i class="fa-solid fa-circle-check"></i>
+            </div>
+            <h3 class="font-display text-2xl font-bold uppercase text-white mb-2">Agendamento Solicitado!</h3>
+            <p class="text-gray-300 text-sm mb-6" id="confirmation-msg">
+                Seus dados foram enviados com sucesso. Clique abaixo para abrir o WhatsApp e confirmar seu passe imediatamente com nosso recepcionista!
+            </p>
+            <a id="whatsapp-confirm-btn" href="#" target="_blank" class="w-full py-4 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white font-extrabold uppercase tracking-wider text-sm flex items-center justify-center gap-3 shadow-lg">
+                <i class="fa-brands fa-whatsapp text-xl"></i> Confirmar no WhatsApp
+            </a>
+            <button onclick="closeConfirmationModal()" class="mt-3 text-xs text-gray-400 hover:text-white uppercase tracking-wider font-semibold">
+                Fechar Janela
+            </button>
+        </div>
+    </div>
+
+    <script>
+        /* MENU MOBILE TOGGLE */
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const menuIcon = document.getElementById('menu-icon');
+
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+            if (mobileMenu.classList.contains('hidden')) {
+                menuIcon.className = 'fa-solid fa-bars';
+            } else {
+                menuIcon.className = 'fa-solid fa-xmark';
+            }
+        });
+
+        // Fechar menu mobile ao clicar em um link
+        document.querySelectorAll('.mobile-link').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+                menuIcon.className = 'fa-solid fa-bars';
+            });
+        });
+
+        /* MUDANÇA DE HEADER NO SCROLL */
+        window.addEventListener('scroll', () => {
+            const header = document.getElementById('main-header');
+            if (window.scrollY > 50) {
+                header.classList.add('py-2', 'bg-darkbg/95');
+            } else {
+                header.classList.remove('py-2', 'bg-darkbg/95');
+            }
+        });
+
+        /* FILTRO DE HORÁRIOS */
+        function filterSchedule(day) {
+            // Atualizar botões
+            document.querySelectorAll('.schedule-tab').forEach(tab => {
+                tab.classList.remove('active', 'bg-brand', 'text-white', 'shadow-glow');
+                tab.classList.add('bg-cardbg', 'text-gray-400');
+            });
+            event.currentTarget.classList.add('active', 'bg-brand', 'text-white', 'shadow-glow');
+            event.currentTarget.classList.remove('bg-cardbg', 'text-gray-400');
+
+            // Mostrar/Ocultar conteúdos
+            document.querySelectorAll('.schedule-content').forEach(content => {
+                content.classList.add('hidden');
+            });
+            document.getElementById(`schedule-${day}`).classList.remove('hidden');
+        }
+
+        /* FAQ ACCORDION */
+        function toggleFaq(button) {
+            const answer = button.nextElementSibling;
+            const icon = button.querySelector('i');
+            
+            if (answer.classList.contains('hidden')) {
+                answer.classList.remove('hidden');
+                icon.style.transform = 'rotate(180deg)';
+            } else {
+                answer.classList.add('hidden');
+                icon.style.transform = 'rotate(0deg)';
+            }
+        }
+
+        /* DADOS DAS MODALIDADES PARA O MODAL */
+        const modalityData = {
+            musculacao: {
+                title: "Musculação Biomecânica",
+                badge: "Alta Intensidade / Força",
+                img: "https://images.unsplash.com/photo-1581009146145-b5ef050c2e1e?auto=format&fit=crop&w=800&q=80",
+                desc: "A musculação na Academia Força Total dispõe de equipamentos de última geração adaptados à biomecânica do corpo humano. Perfeito tanto para iniciantes que buscam perda de gordura e fortalecimento, quanto para atletas focado em hipertrofia.",
+                benefits: ["Acompanhamento de instrutores em tempo integral", "Ficha de treino digital via App", "Equipamentos com carga suave e ajustável"],
+                instructor: "Prof. Ricardo Santos & Equipe"
+            },
+            spinning: {
+                title: "Spinning / Indoor Cycling",
+                badge: "Cardio Intensivo",
+                img: "https://images.unsplash.com/photo-1518611012118-696072aa579a?auto=format&fit=crop&w=800&q=80",
+                desc: "Uma experiência de pedal imersiva! Sala equipada com sistema de som de alta fidelidade e iluminação dinâmica em LED. Queime até 700 calorias em uma única sessão de 45 minutos.",
+                benefits: ["Melhora o condicionamento cardiovascular", "Zero impacto nas articulações dos joelhos", "Ritmo animado comandado por professores experientes"],
+                instructor: "Prof. Carlos Silva"
+            },
+            crosstraining: {
+                title: "Cross Training Total",
+                badge: "Condicionamento & Força",
+                img: "https://images.unsplash.com/photo-1517838277536-f5f99be501cd?auto=format&fit=crop&w=800&q=80",
+                desc: "Combine levantamento olímpico, ginástica e exercícios funcionais em WODs (Workout of the Day) desafiadores. Supere limites físicos em um ambiente de pura camaradagem.",
+                benefits: ["Aumento explosivo de resistência muscular", "Acompanhamento rigoroso de postura", "Comunidade engajada e motivadora"],
+                instructor: "Profª. Fernanda Lima"
+            },
+            muaythai: {
+                title: "Muay Thai & Artes Marciais",
+                badge: "Defesa Pessoal & Foco",
+                img: "https://images.unsplash.com/photo-1549719386-74dfcbf7dbed?auto=format&fit=crop&w=800&q=80",
+                desc: "Aprenda as técnicas da 'Arte das 8 Armas'. Aulas focadas no condicionamento físico, alívio do estresse do dia a dia, perda de gordura e aprendizado de defesa pessoal.",
+                benefits: ["Ganho de flexibilidade e coordenação motoras", "Redução do estresse diário", "Tatame higienizado e equipamentos de apoio"],
+                instructor: "Mestre Mário Rocha"
+            },
+            fitdance: {
+                title: "Aula da Melhor Idade",
+                badge: "Saúde & Vitalidade",
+                img: "https://i.postimg.cc/Bv7nSB3C/Aula-Melhor-idade.jpg",
+                desc: "Atividades físicas personalizadas e seguras voltadas para o público sênior. Exercícios focados na manutenção da autonomia, melhora do equilíbrio, fortalecimento ósseo e muscular, em um ambiente altamente acolhedor e integrador.",
+                benefits: ["Melhora do equilíbrio e prevenção de quedas", "Fortalecimento articular e aumento da mobilidade", "Convivência social e bem-estar físico e mental"],
+                instructor: "Profª. Camila Alves"
+            },
+            pilates: {
+                title: "Alongamento & Mobilidade",
+                badge: "Flexibilidade & Bem-Estar",
+                img: "https://i.postimg.cc/fycs9c43/Forca-alongamento.jpg",
+                desc: "Aprimore sua flexibilidade, amplitude articular e alivie tensões musculares do dia a dia. Aulas focadas na prevenção de lesões, melhora da postura e relaxamento profundo do corpo.",
+                benefits: ["Aumento significativo da flexibilidade e mobilidade", "Alívio de dores corporais e tensões musculares", "Prevenção de lesões e melhora do desempenho físico"],
+                instructor: "Profª. Juliana Mendes"
+            }
+        };
+
+        function openModalityModal(key) {
+            const data = modalityData[key];
+            if (!data) return;
+
+            const modalContent = document.getElementById('modal-modality-content');
+            modalContent.innerHTML = `
+                <div class="relative h-48 rounded-2xl overflow-hidden mb-6">
+                    <img src="${data.img}" class="w-full h-full object-cover">
+                    <span class="absolute top-3 left-3 bg-brand text-white text-xs font-bold uppercase px-3 py-1 rounded-full shadow-glow">
+                        ${data.badge}
+                    </span>
+                </div>
+                <h3 class="font-display text-3xl font-bold uppercase text-white mb-2">${data.title}</h3>
+                <p class="text-xs text-brand font-semibold mb-4"><i class="fa-solid fa-user-check mr-1"></i> ${data.instructor}</p>
+                <p class="text-gray-300 text-sm mb-6 leading-relaxed">${data.desc}</p>
+                <h4 class="font-bold text-white text-xs uppercase tracking-wider mb-3">Principais Benefícios:</h4>
+                <ul class="space-y-2 mb-6">
+                    ${data.benefits.map(b => `<li class="text-xs text-gray-300 flex items-center gap-2"><i class="fa-solid fa-circle-check text-brand"></i> ${b}</li>`).join('')}
+                </ul>
+                <a href="#agendar" onclick="closeModalityModal(); selectModalityInForm('${data.title}')" class="w-full py-3 bg-brand hover:bg-brand-hover text-white font-extrabold uppercase rounded-xl tracking-wider text-sm flex items-center justify-center gap-2 shadow-glow">
+                    <i class="fa-solid fa-calendar-check"></i> Agendar Aula Grátis Desta Modalidade
+                </a>
+            `;
+
+            document.getElementById('modality-modal').classList.remove('hidden');
+        }
+
+        function closeModalityModal() {
+            document.getElementById('modality-modal').classList.add('hidden');
+        }
+
+        function selectModalityInForm(modalityName) {
+            const select = document.getElementById('form-modality');
+            for (let i = 0; i < select.options.length; i++) {
+                if (select.options[i].text.includes(modalityName) || modalityName.includes(select.options[i].value)) {
+                    select.selectedIndex = i;
+                    break;
+                }
+            }
+        }
+
+        /* SELEÇÃO DIRETA DE PLANO NO FORMULÁRIO */
+        function selectPlan(planTitle) {
+            const msgInput = document.getElementById('form-message');
+            msgInput.value = `Tenho interesse em fechar o: ${planTitle}`;
+            
+            const agendarSec = document.getElementById('agendar');
+            agendarSec.scrollIntoView({ behavior: 'smooth' });
+        }
+
+        /* SUBMISSÃO DO FORMULÁRIO E MODAL DE WHATSAPP */
+        function handleFormSubmit(event) {
+            event.preventDefault();
+
+            const name = document.getElementById('form-name').value;
+            const phone = document.getElementById('form-phone').value;
+            const modality = document.getElementById('form-modality').value;
+            const day = document.getElementById('form-day').value;
+            const time = document.getElementById('form-time').value;
+            const message = document.getElementById('form-message').value;
+
+            // Criar mensagem para o WhatsApp
+            let textMsg = `Olá! Gostaria de confirmar minha Aula Experimental na *Academia Força Total*:%0A%0A`;
+            textMsg += `*Nome:* ${encodeURIComponent(name)}%0A`;
+            textMsg += `*WhatsApp:* ${encodeURIComponent(phone)}%0A`;
+            textMsg += `*Modalidade:* ${encodeURIComponent(modality)}%0A`;
+            textMsg += `*Dia:* ${encodeURIComponent(day)}%0A`;
+            textMsg += `*Horário:* ${encodeURIComponent(time)}`;
+            if (message) {
+                textMsg += `%0A*Observação:* ${encodeURIComponent(message)}`;
+            }
+
+            const whatsappUrl = `https://wa.me/5511998765432?text=${textMsg}`;
+
+            // Configurar botão do Modal
+            document.getElementById('whatsapp-confirm-btn').href = whatsappUrl;
+            document.getElementById('confirmation-modal').classList.remove('hidden');
+        }
+
+        function closeConfirmationModal() {
+            document.getElementById('confirmation-modal').classList.add('hidden');
+            document.getElementById('booking-form').reset();
+        }
+    </script>
+</body>
+</html>
